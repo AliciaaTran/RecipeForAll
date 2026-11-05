@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RecipeForAll</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="web.html">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                </span>
+                <span>Recipe<em>ForAll</em></span>
+            </a>
+            <a class="header-link" href="#categories">Browse categories</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <span class="eyebrow">Home cooking, made simple</span>
+                <h1>Find your recipe, find your day!</h1>
+                <p>Search by name, or tell us what's in your kitchen. Add a category or a cuisine to narrow it down.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <form id="searchForm" class="search-card" role="search" autocomplete="off">
+                <div class="search-main">
+                    <div class="input-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <label class="sr-only" for="userInput">Food name</label>
+                        <input type="search" id="userInput" placeholder="Search for food, e.g. lasagne...">
+                    </div>
+                    <button type="submit" id="displayBtn" class="btn btn-primary">Search</button>
+                </div>
+
+                <div class="filters">
+                    <div class="field">
+                        <label for="categorySelect">Category</label>
+                        <select id="categorySelect"><option value="">Any category</option></select>
+                    </div>
+                    <div class="field">
+                        <label for="areaSelect">Cuisine</label>
+                        <select id="areaSelect"><option value="">Any cuisine</option></select>
+                    </div>
+                    <div class="field">
+                        <label for="ingreFilter1">Ingredient 1</label>
+                        <input type="text" id="ingreFilter1" list="ingredientOptions" placeholder="e.g. chicken">
+                    </div>
+                    <div class="field">
+                        <label for="ingreFilter2">Ingredient 2</label>
+                        <input type="text" id="ingreFilter2" list="ingredientOptions" placeholder="e.g. garlic">
+                    </div>
+                    <div class="field">
+                        <label for="ingreFilter3">Ingredient 3</label>
+                        <input type="text" id="ingreFilter3" list="ingredientOptions" placeholder="e.g. lemon">
+                    </div>
+                </div>
+                <datalist id="ingredientOptions"></datalist>
+
+                <div class="search-actions">
+                    <button type="button" id="randomFood" class="btn btn-dark">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></svg>
+                        <span class="btn-label">Surprise me</span>
+                    </button>
+                    <button type="reset" class="btn btn-text">Clear</button>
+                    <p class="hint">Tip: combine a name with filters to narrow it down.</p>
+                </div>
+            </form>
+
+            <section class="section" id="categories" aria-labelledby="categoriesTitle">
+                <div class="section-head">
+                    <h2 id="categoriesTitle">Browse by category</h2>
+                </div>
+                <div class="chips" id="categoryChips">
+                    <span class="chip-placeholder shimmer"></span>
+                    <span class="chip-placeholder shimmer"></span>
+                    <span class="chip-placeholder shimmer"></span>
+                    <span class="chip-placeholder shimmer"></span>
+                    <span class="chip-placeholder shimmer"></span>
+                </div>
+            </section>
+
+            <section class="section" id="results" aria-labelledby="resultsTitle">
+                <div class="section-head">
+                    <h2 id="resultsTitle">Recipes</h2>
+                    <p id="status" class="status" role="status" aria-live="polite"></p>
+                </div>
+                <ul id="output" class="grid"></ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">Recipes and photos from TheMealDB.</div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

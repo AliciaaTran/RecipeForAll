@@ -1,0 +1,13 @@
+{
+  "name": "new-folder",
+  "version": "1.0.0",
+  "description": "RecipeForAll - search recipes from TheMealDB by name or ingredients",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "node --test \"test/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
