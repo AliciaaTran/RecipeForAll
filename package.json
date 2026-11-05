@@ -1,5 +1,5 @@
 {
-  "name": "new-folder",
+  "name": "RecipeForAll",
   "version": "1.0.0",
   "description": "RecipeForAll - search recipes from TheMealDB by name or ingredients",
   "main": "src/main.js",
@@ -8,6 +8,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module"
 }
